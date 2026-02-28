@@ -1,6 +1,9 @@
 public class Banner {
 
     public void display() {
-        System.out.println("Welcome to OOPSBannerApp!");
+        System.out.println("*****  *****  *****  *****");
+        System.out.println("*   *  *   *  *   *  *   *");
+        System.out.println("*   *  *   *  *   *  *   *");
+        System.out.println("*****  *****  *****  *****");
     }
 }
