@@ -1,1 +1,7 @@
-public class Main { public static void main(String[] args) { System.out.println("Welcome to OOPSBannerApp"); } } 
+public class Main {
+    public static void main(String[] args) {
+
+        Banner banner = new Banner();
+        banner.display();
+    }
+}
