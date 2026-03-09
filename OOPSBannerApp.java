@@ -1,26 +1,32 @@
 /**
- * OOPSBannerApp UC3 - Banner Display Application
+ * OOPSBannerApp UC4 – OOPS Banner Application (Use Case 4)
  *
- * This class displays a stylized "OOPS" banner in the console.
- * The spacing is carefully calibrated to match the visual layout
- * of the provided reference image.
+ * This class extends UC3 by storing banner lines in a String array and
+ * using a loop to print them, improving modularity and reusability.
  *
  * @author Developer
- * @version 2.1
+ * @version 4.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // Line 1: Top caps of O, O, P and S
-        System.out.println(String.join(" ","   ****    ","   ****    ","**********  ","**********"));
-        System.out.println(String.join(" "," **     ** "," **     ** ","*********** ","**********"));
-        System.out.println(String.join(" ","**       **","**       **","**        **","**        "));
-        System.out.println(String.join(" ","**       **","**       **","**        **","**        "));
-        System.out.println(String.join(" ","**       **","**       **","**       ** ","**********"));
-        System.out.println(String.join(" ","**       **","**       **","**********  ","**********"));
-        System.out.println(String.join(" ","**       **","**       **","***         ","        **"));
-        System.out.println(String.join(" "," **     ** "," **     ** ","***         ","        **"));
-        System.out.println(String.join(" ","   ****    ","   ****    ","***         ","**********"));
+        // 1. Create a String array to store all lines of the banner
+        String[] bannerLines = {
+            String.join(" ","   ****    ","   ****    ","**********  ","**********"),
+            String.join(" "," **     ** "," **     ** ","*********** ","**********"),
+            String.join(" ","**       **","**       **","**        **","**        "),
+            String.join(" ","**       **","**       **","**        **","**        "),
+            String.join(" ","**       **","**       **","**       ** ","**********"),
+            String.join(" ","**       **","**       **","**********  ","**********"),
+            String.join(" ","**       **","**       **","***         ","        **"),
+            String.join(" "," **     ** "," **     ** ","***         ","        **"),
+            String.join(" ","   ****    ","   ****    ","***         ","**********"),
+        };
+
+        // 2. Use a for-each loop to print each element sequentially
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
