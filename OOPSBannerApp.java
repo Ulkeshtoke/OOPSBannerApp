@@ -1,5 +1,5 @@
 /**
- * OOPSBannerApp UC2 - Banner Display Application
+ * OOPSBannerApp UC3 - Banner Display Application
  *
  * This class displays a stylized "OOPS" banner in the console.
  * The spacing is carefully calibrated to match the visual layout
@@ -13,14 +13,14 @@ public class OOPSBannerApp {
     public static void main(String[] args) {
 
         // Line 1: Top caps of O, O, P and S
-        System.out.println("   ****    " + " " + "   ****    " + " " + "**********  "+ " " + "**********");
-        System.out.println(" **     ** " + " " + " **     ** " + " " + "*********** "+ " " + "**********");
-        System.out.println("**       **" + " " + "**       **" + " " + "**        **"+ " " + "**        ");
-        System.out.println("**       **" + " " + "**       **" + " " + "**        **"+ " " + "**        ");
-        System.out.println("**       **" + " " + "**       **" + " " + "**       ** "+ " " + "**********");
-        System.out.println("**       **" + " " + "**       **" + " " + "*********   "+ " " + "**********");
-        System.out.println("**       **" + " " + "**       **" + " " + "***         "+ " " + "        **");
-        System.out.println(" **     ** " + " " + " **     ** " + " " + "***         "+ " " + "        **");
-        System.out.println("   ****    " + " " + "   ****    " + " " + "***         "+ " " + "**********");
+        System.out.println(String.join(" ","   ****    ","   ****    ","**********  ","**********"));
+        System.out.println(String.join(" "," **     ** "," **     ** ","*********** ","**********"));
+        System.out.println(String.join(" ","**       **","**       **","**        **","**        "));
+        System.out.println(String.join(" ","**       **","**       **","**        **","**        "));
+        System.out.println(String.join(" ","**       **","**       **","**       ** ","**********"));
+        System.out.println(String.join(" ","**       **","**       **","**********  ","**********"));
+        System.out.println(String.join(" ","**       **","**       **","***         ","        **"));
+        System.out.println(String.join(" "," **     ** "," **     ** ","***         ","        **"));
+        System.out.println(String.join(" ","   ****    ","   ****    ","***         ","**********"));
     }
 }
