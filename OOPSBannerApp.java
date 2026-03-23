@@ -6,7 +6,7 @@
  * a character and its corresponding ASCII pattern. It uses constructors and getters
  * for data management, and a StringBuilder to efficiently construct the final output.
  *
- * @author kamaleshwaran
+ * @author Ulkesh
  * @version 7.0
  */
 public class OOPSBannerApp {
