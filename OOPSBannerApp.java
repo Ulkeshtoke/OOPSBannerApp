@@ -1,41 +1,45 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * OOPSBannerApp UC7 - Banner Display Application
+ * OOPSBannerApp UC8 - Banner Display Application
  *
  * Refactoring Note:
- * This iteration introduces a static inner class `CharacterPatternMap` to encapsulate
- * a character and its corresponding ASCII pattern. It uses constructors and getters
- * for data management, and a StringBuilder to efficiently construct the final output.
+ * This final iteration uses a HashMap to store and retrieve character patterns efficiently.
+ * A centralized render function uses a StringBuilder within nested loops to
+ * assemble and display the final banner, separating data storage from display logic.
  *
- * @author kamaleshwaran
- * @version 7.0
+ * @author Ulkesh
+ * @version 8.0
  */
 public class OOPSBannerApp {
 
-    // UC7: Static inner class to encapsulate character data and patterns
-    public static class CharacterPatternMap {
-        private char character;
-        private String[] pattern;
-
-        // Constructor
-        public CharacterPatternMap(char character, String[] pattern) {
-            this.character = character;
-            this.pattern = pattern;
-        }
-
-        // Getter for character
-        public char getCharacter() {
-            return character;
-        }
-
-        // Getter for pattern
-        public String[] getPattern() {
-            return pattern;
+    // UC8: Centralized method to render any word using the pattern map
+    public static void renderBanner(String word, Map<Character, String[]> patternMap) {
+        // Outer loop: iterate through the 7 lines of the ASCII art height
+        for (int i = 0; i < 9; i++) {
+            StringBuilder lineBuilder = new StringBuilder();
+            
+            // Inner loop: iterate through each character in the target word
+            for (char ch : word.toCharArray()) {
+                // Retrieve the pattern from the HashMap
+                String[] pattern = patternMap.get(ch);
+                
+                // Append the current line of the character to the builder
+                lineBuilder.append(pattern[i]);
+            }
+            
+            // Print the fully constructed row
+            System.out.println(lineBuilder.toString());
         }
     }
 
     public static void main(String[] args) {
-        // Instantiate the character map objects
-        CharacterPatternMap letterO = new CharacterPatternMap('O', new String[] {
+        // Create the HashMap to store our character data
+        Map<Character, String[]> patternMap = new HashMap<>();
+        
+        // Populate the map with patterns
+        patternMap.put('O', new String[] {
             "    ***    ",
             "  **   **  ",
             " **     ** ",
@@ -47,7 +51,7 @@ public class OOPSBannerApp {
             "    ***    "
         });
 
-        CharacterPatternMap letterP = new CharacterPatternMap('P', new String[] {
+        patternMap.put('P', new String[] {
             " *******    ",
             " **     **  ",
             " **      ** ",
@@ -59,7 +63,7 @@ public class OOPSBannerApp {
             " **         "
         });
 
-        CharacterPatternMap letterS = new CharacterPatternMap('S', new String[] {
+        patternMap.put('S', new String[] {
             "    ***** ",
             "  **      ",
             "**        ",
@@ -71,20 +75,7 @@ public class OOPSBannerApp {
             "*****     "
         });
 
-        // Array representing the word "OOPS"
-        CharacterPatternMap[] wordToPrint = {letterO, letterO, letterP, letterS};
-
-        // UC7: Use StringBuilder to iterate and construct each line
-        for (int i = 0; i < 9; i++) {
-            StringBuilder lineBuilder = new StringBuilder();
-            
-            // Loop through each letter in the word array
-            for (CharacterPatternMap letter : wordToPrint) {
-                lineBuilder.append(letter.getPattern()[i]);
-            }
-            
-            // Print the fully constructed line
-            System.out.println(lineBuilder.toString());
-        }
+        // Execute the centralized function to display the banner
+        renderBanner("OOPS", patternMap);
     }
 }
